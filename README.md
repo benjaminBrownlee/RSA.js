@@ -16,6 +16,20 @@ You can generate an encryption key of a given keysize (in bits), using `RSA.gene
 Convert a string of alphanumerical characters to standard utf-8 decimal encoding.  Only numbers can be encrypted, so an encoding is necessary to encrypt any non-numerical data.
 
 #### `RSA.encrypt(data, public_key, public_exponet)`
-Encrypt numerical data using public parts of a generated or transmitted keys.  These will be the "n" and "e" properities in the object returned by the `RSA.generate()` function.
+Encrypt numerical data using public parts of a generated or transmitted keys.  These will be the "n" and "e" properities in the object returned by the `RSA.generate()` function.  Function will throw an error if any of the arguments are not Big Integer objects.
 
 #### `RSA.decrypt(cipher_text, private_key, public_key)`
+
+
+#### `RSA.decode(number)`
+Revert data back to string form if it was originally encoded.
+
+## Worked Example
+Here is a worked example of how to use RSA.js to encrypt and decrypt a JS string:
+
+	var keys = RSA.generate(250);
+	var message = RSA.encode("Successful RSA process!");
+	var encrypted_message = RSA.encrypt(message, keys.n, keys.e);
+	var decrypted_message = RSA.decrypt(encrypted_message, keys.d, keys.n);
+	var decoded_message = RSA.decode(decrypted_message);
+	message === decoded_message ? alert("Success!") : alert("Error!");
