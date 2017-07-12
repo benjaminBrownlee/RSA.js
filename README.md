@@ -16,7 +16,7 @@ You can generate an encryption key of a given keysize (in bits), using `RSA.gene
 Convert a string of alphanumerical characters to standard utf-8 decimal encoding.  Only numbers can be encrypted, so an encoding is necessary to encrypt any non-numerical data.
 
 #### `RSA.encrypt(data, public_key, public_exponet)`
-Encrypt numerical data using public parts of a generated or transmitted keys.  These will be the "n" and "e" properities in the object returned by the `RSA.generate()` function.  Function will throw an error if any of the arguments are not Big Integer objects.
+Encrypt numerical data using public parts of a generated or transmitted key.  These will be the "n" and "e" properties in the object returned by the `RSA.generate()` function.  Function will throw an error if any of the arguments are not Big Integer objects.
 
 #### `RSA.decrypt(cipher_text, private_key, public_key)`
 
