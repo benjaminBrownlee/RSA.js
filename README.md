@@ -19,10 +19,10 @@ Convert a string of alphanumerical characters to standard utf-8 decimal encoding
 Encrypt numerical data using public parts of a generated or transmitted key.  These will be the "n" and "e" properties in the object returned by the `RSA.generate()` function.  Function will throw an error if any of the arguments are not Big Integer objects.
 
 #### `RSA.decrypt(cipher_text, private_key, public_key)`
-
+Using the private part of the encryption key (which should not be transfered via network), decrypt a cipher-text string of numerals. Will return an encoded string or simply a number, depending on intent of data transmission
 
 #### `RSA.decode(number)`
-Revert data back to string form if it was originally encoded.
+Revert data back to string form if it was originally encoded in utf-8 code.
 
 ## Worked Example
 Here is a worked example of how to use RSA.js to encrypt and decrypt a JS string:
